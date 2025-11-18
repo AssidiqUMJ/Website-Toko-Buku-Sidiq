@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Buku Sidiq - Books Management</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 min-h-screen">
+    <custom-navbar></custom-navbar>
+    <custom-sidebar></custom-sidebar>
+    
+    <main class="ml-0 md:ml-64 p-4 pt-20 transition-all duration-300">
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-2xl font-bold dark:text-white">Books Management</h1>
+            <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg flex items-center">
+                <i data-feather="plus" class="w-4 h-4 mr-2"></i>
+                Add New Book
+            </button>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-6">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+                <div class="relative flex-1">
+                    <i data-feather="search" class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500"></i>
+                    <input type="text" placeholder="Search books..." class="w-full pl-10 pr-4 py-2 border dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+                <div class="flex gap-2">
+                    <select class="bg-gray-100 dark:bg-gray-700 dark:text-white text-sm rounded-md px-3 py-2 border dark:border-gray-600">
+                        <option>All Genres</option>
+                        <option>Fiction</option>
+                        <option>Non-Fiction</option>
+                        <option>Science Fiction</option>
+                        <option>Fantasy</option>
+                        <option>Biography</option>
+                    </select>
+                    <select class="bg-gray-100 dark:bg-gray-700 dark:text-white text-sm rounded-md px-3 py-2 border dark:border-gray-600">
+                        <option>Sort By</option>
+                        <option>Title (A-Z)</option>
+                        <option>Title (Z-A)</option>
+                        <option>Price (Low-High)</option>
+                        <option>Price (High-Low)</option>
+                        <option>Most Popular</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr class="border-b dark:border-gray-700">
+                            <th class="text-left py-3 px-4 font-medium dark:text-white">Cover</th>
+                            <th class="text-left py-3 px-4 font-medium dark:text-white">Title</th>
+                            <th class="text-left py-3 px-4 font-medium dark:text-white">Author</th>
+                            <th class="text-left py-3 px-4 font-medium dark:text-white">Genre</th>
+                            <th class="text-left py-3 px-4 font-medium dark:text-white">Price</th>
+                            <th class="text-left py-3 px-4 font-medium dark:text-white">Stock</th>
+                            <th class="text-left py-3 px-4 font-medium dark:text-white">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700">
+                            <td class="py-3 px-4">
+                                <img src="http://static.photos/education/200x200/1" alt="Book Cover" class="w-12 h-16 rounded object-cover">
+                            </td>
+                            <td class="py-3 px-4 font-medium dark:text-white">Atomic Habits</td>
+                            <td class="py-3 px-4 dark:text-gray-300">James Clear</td>
+                            <td class="py-3 px-4">
+                                <span class="inline-block px-2 py-1 text-xs rounded-full bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200">Self-Help</span>
+                            </td>
+                            <td class="py-3 px-4 font-medium text-emerald-600 dark:text-emerald-400">Rp 190.000</td>
+                            <td class="py-3 px-4 dark:text-gray-300">42</td>
+                            <td class="py-3 px-4">
+                                <div class="flex gap-2">
+                                    <button class="p-2 text-indigo-600 hover:text-indigo-800 dark:hover:text-indigo-400">
+                                        <i data-feather="edit" class="w-4 h-4"></i>
+                                    </button>
+                                    <button class="p-2 text-red-600 hover:text-red-800 dark:hover:text-red-400">
+                                        <i data-feather="trash-2" class="w-4 h-4"></i>
+                                    </button>
+                                    <button class="p-2 text-gray-600 hover:text-gray-800 dark:hover:text-gray-400">
+                                        <i data-feather="eye" class="w-4 h-4"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        
+                        <tr class="border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700">
+                            <td class="py-3 px-4">
+                                <img src="http://static.photos/education/200x200/2" alt="Book Cover" class="w-12 h-16 rounded object-cover">
+                            </td>
+                            <td class="py-3 px-4 font-medium dark:text-white">The Silent Patient</td>
+                            <td class="py-3 px-4 dark:text-gray-300">Alex Michaelides</td>
+                            <td class="py-3 px-4">
+                                <span class="inline-block px-2 py-1 text-xs rounded-full bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200">Thriller</span>
+                            </td>
+                            <td class="py-3 px-4 font-medium text-emerald-600 dark:text-emerald-400">Rp 600.099</td>
+                            <td class="py-3 px-4 dark:text-gray-300">36</td>
+                            <td class="py-3 px-4">
+                                <div class="flex gap-2">
+                                    <button class="p-2 text-indigo-600 hover:text-indigo-800 dark:hover:text-indigo-400">
+                                        <i data-feather="edit" class="w-4 h-4"></i>
+                                    </button>
+                                    <button class="p-2 text-red-600 hover:text-red-800 dark:hover:text-red-400">
+                                        <i data-feather="trash-2" class="w-4 h-4"></i>
+                                    </button>
+                                    <button class="p-2 text-gray-600 hover:text-gray-800 dark:hover:text-gray-400">
+                                        <i data-feather="eye" class="w-4 h-4"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        
+                        <tr class="border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700">
+                            <td class="py-3 px-4">
+                                <img src="http://static.photos/education/200x200/3" alt="Book Cover" class="w-12 h-16 rounded object-cover">
+                            </td>
+                            <td class="py-3 px-4 font-medium dark:text-white">Dune</td>
+                            <td class="py-3 px-4 dark:text-gray-300">Frank Herbert</td>
+                            <td class="py-3 px-4">
+                                <span class="inline-block px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">Science Fiction</span>
+                            </td>
+                            <td class="py-3 px-4 font-medium text-emerald-600 dark:text-emerald-400">Rp 250.000</td>
+                            <td class="py-3 px-4 dark:text-gray-300">28</td>
+                            <td class="py-3 px-4">
+                                <div class="flex gap-2">
+                                    <button class="p-2 text-indigo-600 hover:text-indigo-800 dark:hover:text-indigo-400">
+                                        <i data-feather="edit" class="w-4 h-4"></i>
+                                    </button>
+                                    <button class="p-2 text-red-600 hover:text-red-800 dark:hover:text-red-400">
+                                        <i data-feather="trash-2" class="w-4 h-4"></i>
+                                    </button>
+                                    <button class="p-2 text-gray-600 hover:text-gray-800 dark:hover:text-gray-400">
+                                        <i data-feather="eye" class="w-4 h-4"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        
+                        <tr class="border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700">
+                            <td class="py-3 px-4">
+                                <img src="http://static.photos/education/200x200/4" alt="Book Cover" class="w-12 h-16 rounded object-cover">
+                            </td>
+                            <td class="py-3 px-4 font-medium dark:text-white">Educated</td>
+                            <td class="py-3 px-4 dark:text-gray-300">Tara Westover</td>
+                            <td class="py-3 px-4">
+                                <span class="inline-block px-2 py-1 text-xs rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-900 dark:text-emerald-200">Memoir</span>
+                            </td>
+                            <td class="py-3 px-4 font-medium text-emerald-600 dark:text-emerald-400">Rp 175.000</td>
+                            <td class="py-3 px-4 dark:text-gray-300">19</td>
+                            <td class="py-3 px-4">
+                                <div class="flex gap-2">
+                                    <button class="p-2 text-indigo-600 hover:text-indigo-800 dark:hover:text-indigo-400">
+                                        <i data-feather="edit" class="w-4 h-4"></i>
+                                    </button>
+                                    <button class="p-2 text-red-600 hover:text-red-800 dark:hover:text-red-400">
+                                        <i data-feather="trash-2" class="w-4 h-4"></i>
+                                    </button>
+                                    <button class="p-2 text-gray-600 hover:text-gray-800 dark:hover:text-gray-400">
+                                        <i data-feather="eye" class="w-4 h-4"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        
+                        <tr class="hover:bg-gray-50 dark:hover:bg-gray-700">
+                            <td class="py-3 px-4">
+                                <img src="http://static.photos/education/200x200/5" alt="Book Cover" class="w-12 h-16 rounded object-cover">
+                            </td>
+                            <td class="py-3 px-4 font-medium dark:text-white">The Midnight Library</td>
+                            <td class="py-3 px-4 dark:text-gray-300">Matt Haig</td>
+                            <td class="py-3 px-4">
+                                <span class="inline-block px-2 py-1 text-xs rounded-full bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200">Fantasy</span>
+                            </td>
+                            <td class="py-3 px-4 font-medium text-emerald-600 dark:text-emerald-400">Rp 500.000</td>
+                            <td class="py-3 px-4 dark:text-gray-300">31</td>
+                            <td class="py-3 px-4">
+                                <div class="flex gap-2">
+                                    <button class="p-2 text-indigo-600 hover:text-indigo-800 dark:hover:text-indigo-400">
+                                        <i data-feather="edit" class="w-4 h-4"></i>
+                                    </button>
+                                    <button class="p-2 text-red-600 hover:text-red-800 dark:hover:text-red-400">
+                                        <i data-feather="trash-2" class="w-4 h-4"></i>
+                                    </button>
+                                    <button class="p-2 text-gray-600 hover:text-gray-800 dark:hover:text-gray-400">
+                                        <i data-feather="eye" class="w-4 h-4"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="flex flex-col md:flex-row justify-between items-center mt-6 pt-6 border-t dark:border-gray-700">
+                <div class="text-sm text-gray-600 dark:text-gray-400 mb-4 md:mb-0">
+                    Showing 1 to 5 of 1248 books
+                </div>
+                <div class="flex gap-2">
+                    <button class="px-3 py-1 border rounded-md dark:border-gray-600 dark:text-white disabled:opacity-50" disabled>
+                        <i data-feather="chevron-left" class="w-4 h-4"></i>
+                    </button>
+                    <button class="px-3 py-1 border rounded-md bg-indigo-600 text-white border-indigo-600">1</button>
+                    <button class="px-3 py-1 border rounded-md dark:border-gray-600 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">2</button>
+                    <button class="px-3 py-1 border rounded-md dark:border-gray-600 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">3</button>
+                    <span class="px-3 py-1 dark:text-white">...</span>
+                    <button class="px-3 py-1 border rounded-md dark:border-gray-600 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">25</button>
+                    <button class="px-3 py-1 border rounded-md dark:border-gray-600 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <i data-feather="chevron-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <custom-footer></custom-footer>
+    
+    <script src="components/navbar.js"></script>
+    <script src="components/sidebar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
